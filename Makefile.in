@@ -31,6 +31,7 @@ TARGETS     = bin/ah
 all: $(TARGETS)
 
 bin/ah: $(patsubst %.o,obj/%.o,$(OBJECTS))
+	mkdir -p bin
 	$(CXX) -s $(LDFLAGS) -o $@ $(patsubst %.o,obj/%.o,$(OBJECTS)) $(LIBS)
 
 test: $(TARGETS)
@@ -40,4 +41,5 @@ clean:
 	rm -f $(patsubst %.o,obj/%.o,$(OBJECTS)) $(TARGETS)
 
 $(patsubst %.o,obj/%.o,$(OBJECTS)): obj/%.o: %.cpp
+	mkdir -p obj
 	$(CXX) -c $(CXXFLAGS) $(CPPFLAGS) $(DEFS) -o $@ $<
