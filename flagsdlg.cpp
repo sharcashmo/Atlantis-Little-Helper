@@ -288,8 +288,8 @@ CMapFlagDlg::CMapFlagDlg(wxWindow *parent, CLand * pLand, wxPoint & position)
         sizer          = new wxBoxSizer( wxHORIZONTAL );
         st             = new wxStaticText(this, -1, wxString::FromAscii(LandFlagLabel[i]));
 
-        sizer->Add(st           , 0, wxALIGN_LEFT  | wxALL           , SPACER_NARROW );
-        sizer->Add(m_FlagText[i], 1, wxALIGN_RIGHT | wxALL | wxEXPAND, SPACER_NARROW );
+        sizer->Add(st           , 0, wxALIGN_LEFT  | wxALL, SPACER_NARROW );
+        sizer->Add(m_FlagText[i], 1, wxALL | wxEXPAND     , SPACER_NARROW );
     
         topsizer->Add(sizer, 1, wxALIGN_LEFT | wxGROW);
     }
