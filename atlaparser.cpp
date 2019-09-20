@@ -6219,7 +6219,13 @@ void CAtlaParser::RunOrder_Buy(CStr & Line, CStr & ErrorLine, BOOL skiperror, CU
 //            if (gpDataHelper->GetItemWeights(S1.GetData(), weights, movenames, movecount))
 //                pUnit ->AddWeight(n1, weights, movenames, movecount);
             pUnit->CalcWeightsAndMovement();
-
+            
+          	// if buying leaders set the dummy giving unit leadership to SZ_LEADER so
+          	// AdjustSkillsAfterGivingMen set correctly leadership for new formed units
+           	if (0==stricmp(S1.GetData(), "lead") || 0==stricmp(S1.GetData(), "leader")
+           		|| 0==stricmp(S1.GetData(), "leaders"))
+           		DummyGiver.SetProperty(PRP_LEADER, eCharPtr, SZ_LEADER, eBoth);
+           	
             AdjustSkillsAfterGivingMen(&DummyGiver, pUnit, S1, n1);
         }
         else
