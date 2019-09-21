@@ -4297,7 +4297,7 @@ void CAhApp::ShowLandFinancial(CLand * pCurLand)
                 if (pUnit->FactionId == CurFaction && (!pUnit->pMovement || pUnit->pMovement->Count()==0))
                     if (pUnit->GetProperty(PRP_LEADER, type, (const void *&)leadership, eNormal) && eCharPtr==type &&
                         (0==strcmp(leadership, SZ_LEADER) || 0==strcmp(leadership, SZ_HERO)))
-                        Maintain += men*20;
+                        Maintain += men*50;
                     else
                         Maintain += men*10;
             }
