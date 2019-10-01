@@ -4272,7 +4272,7 @@ void CAhApp::ShowLandFinancial(CLand * pCurLand)
                 {
                     SilvRes += (long)value;
 
-                    if (pUnit->pMovement && pUnit->pMovement->Count()>0)
+                    if ((pUnit->pMovement) && (pUnit->pMovement->Count()>0) && ((long)value > 0))
                         MovedOut += (long)value;
                 }
             }
